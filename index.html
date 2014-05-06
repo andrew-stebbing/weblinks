@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<!-- Mobile specific data -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" >
+
+	<!-- Stylesheets -->
+	<link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+	<link rel="stylesheet" href="css/weblinks.css">
+
+	<title>WebLinks</title>
+
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar navbar-default navbar-fixed-top" role="banner">
+	<div class="container">
+		<div class="navbar-header">
+			<span class="navbar-brand">WebLinks+</span>
+		</div>
+
+		<div class="navbar-right" >
+			<!-- <form action="" class="navbar-form"> -->
+				<!-- <div class="input-prepend"> -->
+					<span class="navbar-brand" id="linksCount"></span>
+			  	<!-- <input type="text" id="status" value="status"> -->
+				<!-- </div> -->
+			<!-- </form> -->
+		</div>
+
+	</div>
+</header>
+
+<!-- BANNER -->
+<div class="container">
+	<section class="well well-lg">
+		
+	
+<!-- MAIN CONTENT -->
+	<div class="row">
+		<aside class="col-lg-2">
+
+			<!-- Tag dropdown -->
+			<section>
+				<div>
+					<h5>Search by Tag</h5>
+					<form>
+						<select name="tags" id="tagSelect" type="select-one" value="">
+						</select>
+						<!-- <button id="tagSearchBtn" name="tags" class="btn btn-primary btn-xs">
+							<span class="glyphicon glyphicon-search"></span>
+						</button> -->
+					</form>
+				</div>
+			</section>
+
+			<!-- Author dropdown -->
+			<section>
+				<div>
+					<h5>Search by Author</h5>
+					<select name="author" id="authorSelect" type="select-one" value="">
+					</select>
+					<!-- <button id="authorSearchBtn" name="authors" class="btn btn-primary btn-xs">
+						<span class="glyphicon glyphicon-search"></span>
+					</button> -->
+				</div>
+			</section>
+
+			<hr>
+
+			<button id="addBtn" name="add" class="btn btn-warning btn-sm" type="button" data-toggle="modal" data-target="#addEdit" >Add</button>
+			<button id="getAllBtn" name="links" class="btn btn-primary btn-sm" type="button">Get all</button>
+		</aside>
+
+		<div id="output" class="col-lg-10"><h3>Main Output</h3></div>
+	</div>
+	
+</section>
+</div>
+
+<!-- Modal edit and add pane -->
+<div class="modal" id="addEdit">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button class="close" type="button" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h3 class="modal-title">Article Details</h4>
+			</div>
+
+			<div class="modal-body">
+				<section >
+					<form action="" id="input" role="form">
+					<fieldset>
+							<!-- <legend>Please complete</legend> -->
+								<input type="hidden" id="id" value="">
+							<div class="form-group">
+								<label for="title">Title</label>
+								<input type="text" class="form-control" name="title" id="title" placeholder="article title" value="">
+							</div>
+							<div class="form-group">
+							  <label for="url">Link</label>
+								<input type="text" class="form-control" name="url" id="url" placeholder="link" value="">
+							</div>
+							<div class="form-group">
+								<label for="author">Author</label>
+								<input type="text" class="form-control" name="author" id="author" placeholder="author" value="">
+							</div>
+							<div class="form-group">
+								<label for="tags">Tags</label>
+								<input type="text" class="form-control" name="tags" id="tags" placeholder="tags: comma seperated" value="">
+							</div>
+							<div class="form-group">
+								<label for="comments">Comments</label>
+								<input type="textfield," class="form-control" id="comments" name="comments" placeholder="additional comments" value="">
+							</div>
+						</form>
+					</fieldset>
+				</section>
+			</div>
+			<div class="modal-footer">
+				<button class="btn btn-default" name="close" type="button" data-dismiss="modal">Close</button>
+				<button name="save" id="saveBtn" class="btn btn-primary" type="button" data-dismiss="modal" data-action="write">Save</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Alert Modal -->
+<div class="modal bs-example-modal-sm" id="alertModal">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+					<button class="close" type="button" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<h3>WTF?</h3>
+			</div>
+				<div class="modal-body">
+					<p id="alertText" data-id="">Are you sure you want to delete this article?</p>
+				</div>
+				<div class="modal-footer">
+					<button class="btn btn-default"  type="button" data-dismiss="modal">No thanks</button>
+					<button class="btn btn-lg btn-danger"  type="button" id="deleteBtn" data-dismiss="modal">DELETE</button>
+				</div>
+		</div>
+	</div>
+</div>
+
+<!-- Required js files -->
+<script type="text/javascript" src="/Users/Andrew/JavaScript stuff/js_frameworks/jquery-2.0.2.js"></script>
+<script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
+<script type="text/javascript" src="js/app.js"></script>
+
+
+</body>
+</html>
+<!-- sample short code for striped table
+table.table>caption{table caption}+thead>tr>th{heading $}th*4^^tbody.table-striped>tr>td{body $}*4
+ -->
